@@ -3,10 +3,11 @@ package password;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class HelloWorldTest {
+class TestPasswordValidator {
     @Test
-    void greets_the_world() {
-        assertThat(HelloWorld.greet()).isEqualTo("Hello World");
+    void password_have_at_least_8_characters() {
+        assertEquals(8, PasswordValidator.validate());
     }
 }
