@@ -49,4 +49,16 @@ class TestPasswordValidator {
         assertThat(validator.DigitsCountisvalid("1AbC")).isTrue();
         assertThat(validator.DigitsCountisvalid("AbC1")).isTrue();
     }
+
+    @Test
+    void password_must_have_at_least_one_special_character() {
+        PasswordValidator validator = new PasswordValidator();
+
+        assertThat(validator.SpecialCharactersCountisvalid(null)).isFalse();
+        assertThat(validator.SpecialCharactersCountisvalid("")).isFalse();
+        assertThat(validator.SpecialCharactersCountisvalid("ABC")).isFalse();
+        assertThat(validator.SpecialCharactersCountisvalid("abc")).isFalse();
+        assertThat(validator.SpecialCharactersCountisvalid("AbC1")).isFalse();
+        assertThat(validator.SpecialCharactersCountisvalid("AbC")).isTrue();
+    }
 }
