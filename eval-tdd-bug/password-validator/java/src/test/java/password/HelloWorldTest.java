@@ -33,7 +33,7 @@ class TestPasswordValidator {
 
         assertThat(validator.MinusculesCountisvalid(null)).isFalse();
         assertThat(validator.MinusculesCountisvalid("")).isFalse();
-        assertThat(validator.MinusculesCountisvalid("ABc")).isFalse();
+        assertThat(validator.MinusculesCountisvalid("ABC")).isFalse();
         assertThat(validator.MinusculesCountisvalid("abc")).isTrue();
         assertThat(validator.MinusculesCountisvalid("AbC")).isTrue();
     }
