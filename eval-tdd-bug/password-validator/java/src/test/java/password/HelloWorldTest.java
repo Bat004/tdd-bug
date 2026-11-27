@@ -22,7 +22,7 @@ class TestPasswordValidator {
 
         assertThat(validator.MajusculesCountisvalid(null)).isFalse();
         assertThat(validator.MajusculesCountisvalid("")).isFalse();
-        assertThat(validator.MajusculesCountisvalid("abF")).isFalse();
+        assertThat(validator.MajusculesCountisvalid("abc")).isFalse();
         assertThat(validator.MajusculesCountisvalid("ABC")).isTrue();
         assertThat(validator.MajusculesCountisvalid("aBc")).isTrue();
     }
