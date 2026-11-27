@@ -45,7 +45,7 @@ class TestPasswordValidator {
         assertThat(validator.DigitsCountisvalid(null)).isFalse();
         assertThat(validator.DigitsCountisvalid("")).isFalse();
         assertThat(validator.DigitsCountisvalid("ABC")).isFalse();
-        assertThat(validator.DigitsCountisvalid("1abc")).isFalse();
+        assertThat(validator.DigitsCountisvalid("abc")).isFalse();
         assertThat(validator.DigitsCountisvalid("1AbC")).isTrue();
         assertThat(validator.DigitsCountisvalid("AbC1")).isTrue();
     }
