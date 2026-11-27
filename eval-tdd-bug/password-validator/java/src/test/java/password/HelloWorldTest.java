@@ -37,4 +37,16 @@ class TestPasswordValidator {
         assertThat(validator.MinusculesCountisvalid("abc")).isTrue();
         assertThat(validator.MinusculesCountisvalid("AbC")).isTrue();
     }
+
+    @Test
+    void password_must_have_at_least_one_digit() {
+        PasswordValidator validator = new PasswordValidator();
+
+        assertThat(validator.DigitsCountisvalid(null)).isFalse();
+        assertThat(validator.DigitsCountisvalid("")).isFalse();
+        assertThat(validator.DigitsCountisvalid("ABC")).isFalse();
+        assertThat(validator.DigitsCountisvalid("1abc")).isFalse();
+        assertThat(validator.DigitsCountisvalid("1AbC")).isTrue();
+        assertThat(validator.DigitsCountisvalid("AbC1")).isTrue();
+    }
 }
