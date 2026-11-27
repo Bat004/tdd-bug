@@ -26,4 +26,15 @@ class TestPasswordValidator {
         assertThat(validator.MajusculesCountisvalid("ABC")).isTrue();
         assertThat(validator.MajusculesCountisvalid("aBc")).isTrue();
     }
+
+    @Test
+    void password_must_have_at_least_one_minuscules() {
+        PasswordValidator validator = new PasswordValidator();
+
+        assertThat(validator.MinusculesCountisvalid(null)).isFalse();
+        assertThat(validator.MinusculesCountisvalid("")).isFalse();
+        assertThat(validator.MinusculesCountisvalid("ABc")).isFalse();
+        assertThat(validator.MinusculesCountisvalid("abc")).isTrue();
+        assertThat(validator.MinusculesCountisvalid("AbC")).isTrue();
+    }
 }
