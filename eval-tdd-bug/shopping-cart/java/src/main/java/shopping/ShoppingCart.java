@@ -19,6 +19,9 @@ public class ShoppingCart {
 
     public void remove(String name) {
         items.removeIf(item -> item.name().equals(name));
+        if (subtotal() < DISCOUNT_THRESHOLD) {
+            discountApplied = false;
+        }
     }
 
     public double total() {
