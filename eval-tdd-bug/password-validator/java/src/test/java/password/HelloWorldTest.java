@@ -10,9 +10,20 @@ class TestPasswordValidator {
     void password_must_have_at_least_8_characters() {
         PasswordValidator validator = new PasswordValidator();
 
-        assertThat(validator.isValid(null)).isFalse();
-        assertThat(validator.isValid("")).isFalse();
-        assertThat(validator.isValid("1234567")).isFalse();
-        assertThat(validator.isValid("32876544")).isTrue();
+        assertThat(validator.LengthisValid(null)).isFalse();
+        assertThat(validator.LengthisValid("")).isFalse();
+        assertThat(validator.LengthisValid("1234567")).isFalse();
+        assertThat(validator.LengthisValid("32876544")).isTrue();
+    }
+
+    @Test
+    void password_must_have_at_least_one_majuscules() {
+        PasswordValidator validator = new PasswordValidator();
+
+        assertThat(validator.MajusculesCountisvalid(null)).isFalse();
+        assertThat(validator.MajusculesCountisvalid("")).isFalse();
+        assertThat(validator.MajusculesCountisvalid("abF")).isFalse();
+        assertThat(validator.MajusculesCountisvalid("ABC")).isTrue();
+        assertThat(validator.MajusculesCountisvalid("aBc")).isTrue();
     }
 }
