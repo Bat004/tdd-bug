@@ -59,6 +59,6 @@ class TestPasswordValidator {
         assertThat(validator.SpecialCharactersCountisvalid("ABC")).isFalse();
         assertThat(validator.SpecialCharactersCountisvalid("abc")).isFalse();
         assertThat(validator.SpecialCharactersCountisvalid("AbC1")).isFalse();
-        assertThat(validator.SpecialCharactersCountisvalid("AbC")).isTrue();
+        assertThat(validator.SpecialCharactersCountisvalid("AbC!")).isTrue();
     }
 }
