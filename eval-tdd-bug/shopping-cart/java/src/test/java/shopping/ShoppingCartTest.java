@@ -71,4 +71,13 @@ class ShoppingCartTest {
         // sous-total restant = 150 € — remise toujours applicable
         assertThat(cart.total()).isCloseTo(135.0, within(0.001));
     }
+
+    @Test
+    void retirer_Ordinateur_annule_reduction() {
+        cart.add("Ordinateur", 150.0, 1);
+        cart.add("Souris", 20.0, 1);
+        cart.remove("Ordinateur");
+
+        assertThat(cart.total()).isEqualTo(20.0);
+    }
 }
